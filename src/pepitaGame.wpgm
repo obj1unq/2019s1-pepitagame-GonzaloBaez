@@ -22,11 +22,13 @@ program PepitaGame {
 	game.addVisual(pipa)
 	game.addVisual(roque)
 // COLISIONES
-	game.whenCollideDo(pepona, {golondrina => game.say(pepona,"hola pepita")})
+	//game.whenCollideDo(pepona, {golondrina => game.say(pepona,"hola pepita")})
 	
-	game.whenCollideDo(pipa, {golondrina => game.say(pipa,"hola pepita")})
+	//game.whenCollideDo(pipa, {golondrina => game.say(pipa,"hola pepita")})
 	
-	game.whenCollideDo(roque, {comida => roque.comidaEnMano(comida)})
+	game.whenCollideDo(roque, {alpiste => roque.comidaEnMano(alpiste)})
+	
+	game.whenCollideDo(roque, {manzana => roque.comidaEnMano(manzana)})
 
 //	TECLADO
 	keyboard.h().onPressDo { game.say(pepita, "Hola chiques!") }
