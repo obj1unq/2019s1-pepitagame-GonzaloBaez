@@ -26,9 +26,9 @@ program PepitaGame {
 	
 	//game.whenCollideDo(pipa, {golondrina => game.say(pipa,"hola pepita")})
 	
-	game.whenCollideDo(roque, {alpiste => roque.comidaEnMano(alpiste)})
+	game.whenCollideDo(roque, {objeto => objeto.colisionaCon(roque)})
 	
-	game.whenCollideDo(roque, {manzana => roque.comidaEnMano(manzana)})
+
 
 //	TECLADO
 	keyboard.h().onPressDo { game.say(pepita, "Hola chiques!") }

@@ -13,7 +13,11 @@ object pepita {
 						 } else {
 							"pepita.png"
 						}
-
+	method colisionaCon(persona){
+		persona.comidaEnMano().darDeComer(self)
+		persona.comidaEnMano().tirarComida()
+		persona.comidaEnMano(vacio)
+	}
 	method come(comida) {
 		self.move(comida.position())
 		energia = energia + comida.energia()
@@ -46,10 +50,15 @@ object pepita {
 object pepona{
 	method image() = "pepona.png"
 	method position() = game.at(7,2)
-	
+	method colisionaCon(persona){
+		
+	}
+
 }
 object pipa{
 	method image() = "pepitaCanchera.png"
 	method position() = game.at(7,7)
-	
+	method colisionaCon(persona){
+		
+	}
 }
