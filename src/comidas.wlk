@@ -1,8 +1,8 @@
 import wollok.game.*
 
-object manzana {
-	var property posicionX = 5
-	var property posicionY = 1
+class Manzana {
+	var property posicionX
+	var property posicionY
 	
 	method image() = "manzana.png"
 	method position() = game.at(posicionX,posicionY)
@@ -14,32 +14,35 @@ object manzana {
 		self.posicionX(1.randomUpTo(10).truncate(0))
 		self.posicionY(1.randomUpTo(10).truncate(0))
 	}
-	method darDeComer(ave){
-		ave.come(self)
+	method esComidoPor(ave){
+		ave.comer(self)
 	}
+	method saludar(ave){}
 }
 
-object alpiste {
-	var property posicionX = 5
-	var property posicionY = 5
+class Alpiste {
+	var property posicionX 
+	var property posicionY
+	var property cantGramos = 0
 	
 	method image() = "alpiste.png"
 	method position() = game.at(posicionX,posicionY)
-	method energia() = 5
+	method energia() = 0.5 * cantGramos
 	method colisionaCon(persona){
 		persona.agarraComida(self)
 	}
+	method saludar(ave){}
 	method tirarComida(){
 		self.posicionX(1.randomUpTo(10).truncate(0))
 		self.posicionY(1.randomUpTo(10).truncate(0))
 	}
-	method darDeComer(ave){
-		ave.come(self)
+	method esComidoPor(ave){
+		ave.comer(self)
 	}
 }
 
 object vacio {
-	method darDeComer(ave){
+	method esComidoPor(ave){
 		
 	}
 	method tirarComida(){

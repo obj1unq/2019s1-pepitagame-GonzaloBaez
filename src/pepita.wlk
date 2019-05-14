@@ -13,13 +13,17 @@ object pepita {
 						 } else {
 							"pepita.png"
 						}
-	method colisionaCon(persona){
-		persona.comidaEnMano().darDeComer(self)
-		persona.comidaEnMano().tirarComida()
-		persona.comidaEnMano(vacio)
+	method colisionaCon(objeto){
+		objeto.esComidoPor(self)
+		objeto.saludar(self)
 	}
 	method come(comida) {
 		self.move(comida.position())
+		energia = energia + comida.energia()
+		game.removeVisual(comida)
+		
+	}
+	method comer(comida){
 		energia = energia + comida.energia()
 		game.removeVisual(comida)
 		
@@ -50,15 +54,14 @@ object pepita {
 object pepona{
 	method image() = "pepona.png"
 	method position() = game.at(7,2)
-	method colisionaCon(persona){
-		
-	}
-
+	method colisionaCon(persona){}
+	method esComidoPor(ave){}
+	method saludar(ave){}
 }
 object pipa{
 	method image() = "pepitaCanchera.png"
 	method position() = game.at(7,7)
-	method colisionaCon(persona){
-		
-	}
+	method colisionaCon(persona){}
+	method esComidoPor(ave){}
+	method saludar(ave){}
 }
